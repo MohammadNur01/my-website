@@ -15,7 +15,7 @@
       <div class="col-md-10 col-lg-8 col-xl-7 px-0">
         {{-- <img width="600" class="rounded" src="/img/{{ $post["image"] }}" alt=" /img/{{ $post["image"] }}"> --}}
         <h2 class="post-title fw-bold">{{ $post->title }}</h2>
-        {{-- <h6 class="">Writed by <a href="" style="text-decoration: none">{{ $post->author }}</a> </h6> --}}
+        {{-- <h6 class="">Writed by <a href="" style="text-decoration: none">{{ $post->author }}</a> in {{ $post->category->name }} </h6> --}}
         {!! $post->body !!}
       </div>
     </div>
@@ -23,6 +23,6 @@
   </div>
 
 
-<a href="/blog" class="btn btn-dark p-1 mb-5">Back to Posts</a>
+<a href="/posts" class="btn btn-dark p-1 mb-5">Back to Posts</a>
 @endsection
 

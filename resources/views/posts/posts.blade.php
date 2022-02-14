@@ -19,7 +19,7 @@
               <div class="post-preview">
                   <a href="/posts/{{ $post->slug }}" style="text-decoration: none">
                       <h2 class="post-title" >{{ $post->title }}</h2>
-                      <a href="" style="text-decoration: none" class="category badge bg-success p-2">{{ $post["category"] }}</a>
+                      <a href="/posts/categories/{{ $post->category->slug }}" style="text-decoration: none" class="category badge bg-success p-2">{{ $post->category->name }}</a>
                   </a>
                   <h4 class="post-body">{{ $post->excerpt }}</h4>
                   <h6 class="post-meta">

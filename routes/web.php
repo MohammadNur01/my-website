@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Portfolio;
 use App\Models\PostCategory;
@@ -42,9 +43,13 @@ Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
-
-// halaman category
-// Route::get('posts/categories/{slug}', [PostController::class, "showCat"]);
+Route::get('posts/categories/{category:slug}', function (Category $category) {
+    return view('posts/categories/category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});
 
 
 Route::get('/contact', function () {

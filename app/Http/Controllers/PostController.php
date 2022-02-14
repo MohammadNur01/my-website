@@ -24,14 +24,4 @@ class PostController extends Controller
             "post" => $post
         ]);
     }
-
-    public function showCat($slug)
-    {
-        return view('blogs/category', [
-            "title" => "Single Category",
-            // "categories" => Post::allCat(),
-            // "postsCategories" => Post::findCat(),
-            // "posts" => 
-        ]);
-    }
 }
