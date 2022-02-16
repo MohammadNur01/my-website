@@ -9,7 +9,7 @@
     <meta name="keyword" content="Building Website and Web-App">
     <title>MCNWeb | {{ $title }}</title>
     {{-- my style --}}
-    <link rel="stylesheet" href="./css/style.css">
+    {{-- <link rel="stylesheet" href="./css/style.css"> --}}
 
     {{-- favicon --}}
     <link rel="icon" href="my_favicon.ico" type="image/x-icon">

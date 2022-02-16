@@ -3,9 +3,9 @@
 @section('container')
     <div class="nav-scroller p-0 mb-2 ">
       <nav class="nav d-flex justify-content-between bg-dark bg-opacity-75">
-        {{-- @foreach ($categories as $category)
-        <a class="p-2 link-light" style="text-decoration: none" href="/posts/categories/{{ $category["slug"] }}">{{ $category["name"] }}</a>
-        @endforeach --}}
+        @foreach ($categories as $category)
+        <a class="p-2 link-light" style="text-decoration: none" href="/posts/categories/{{ $category->slug }}">{{ $category->name }}</a>
+        @endforeach
       </nav>
     </div>
     

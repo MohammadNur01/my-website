@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Portfolio;
@@ -47,7 +48,8 @@ Route::get('posts/categories/{category:slug}', function (Category $category) {
     return view('posts/categories/category', [
         'title' => $category->name,
         'posts' => $category->posts,
-        'category' => $category->name
+        'category' => $category->name,
+        "categories" => Category::all()
     ]);
 });
 

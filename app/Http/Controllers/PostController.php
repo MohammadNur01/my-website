@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
+
+
+
 
 class PostController extends Controller
 {
@@ -11,7 +15,7 @@ class PostController extends Controller
     {
         return view('posts/posts', [
             "title" => "All Posts",
-            // "categories" => Post::allCat(),
+            "categories" => Category::all(),
             "posts" => Post::all()
         ]);
     }
@@ -20,7 +24,7 @@ class PostController extends Controller
     {
         return view('posts/post', [
             "title" => "Post",
-            // "categories" => Post::allCat(),
+            "categories" => Category::all(),
             "post" => $post
         ]);
     }
