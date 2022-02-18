@@ -24,8 +24,8 @@
                   <h4 class="post-body">{{ $post->excerpt }}</h4>
                   <h6 class="post-meta">
                       Writed by
-                      <a style="text-decoration: none" href="#!">{{ $post["author"] }}</a>
-                      on {{ $post->published_at }}
+                      <a style="text-decoration: none" href="/about">{{ $post->user->name }}</a>
+                      on {{ $post->created_at }}
                   </h6>
               </div>
               <!-- Divider-->
