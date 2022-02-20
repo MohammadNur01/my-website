@@ -16,7 +16,8 @@ class PostController extends Controller
         return view('posts/posts', [
             "title" => "All Posts",
             "categories" => Category::all(),
-            "posts" => Post::all()
+            // "posts" => Post::all()
+            "posts" => Post::latest()->get()
         ]);
     }
 

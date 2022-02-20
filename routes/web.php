@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Post;
 use App\Models\Portfolio;
 use App\Models\PostCategory;
@@ -45,10 +46,17 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('posts/categories/{category:slug}', function (Category $category) {
-    return view('posts/categories/category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name,
+    return view('posts/posts', [
+        'title' => "Post By Category : $category->name",
+        'posts' => $category->posts->load('category', 'author'),
+        "categories" => Category::all()
+    ]);
+});
+
+Route::get('/authors/{author:username}', function (User $author) {
+    return view('/posts/posts', [
+        'title' => "Post by Author : $author->name",
+        'posts' => $author->posts->load('category', 'author'),
         "categories" => Category::all()
     ]);
 });
