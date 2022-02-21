@@ -5,7 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Post;
@@ -25,11 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
 

@@ -13,9 +13,9 @@
           <div class="col-sm-4 p-2">
               <div class="card">
                   <h4 class="text-dark p-2">{{ $port->title }}</h4>
-                  <img class="card-img-top rounded" src="/img/{{ $port->image }}" alt="Card image cap">
+                  <img class="card-img-top rounded" src="https://source.unsplash.com/500x300?computers" alt="Card image cap">
                   <div class="card-body">
-                  <p class="card-text">{{ $port->excerpt }}</p>
+                  <p class="card-text fs-5">{{ $port->excerpt }}</p>
                   </div>
                   <div class="card-body">
                     <a href="/portfolios/{{ $port->slug }}" class="btn btn-primary">Detail</a>

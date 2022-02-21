@@ -10,12 +10,17 @@
   </nav>
 </div>
 
-  <div class="container px-4 px-lg-5">
-    <div class="row gx-4 gxlg-5 justify-content-center">
-      <div class="col-md-10 col-lg-8 col-xl-7 px-0">
-        <h2 class="post-title fw-bold">{{ $post->title }}</h2>
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8">
+        <h2 class="post-title fw-bold mb-3">{{ $post->title }}</h2>
         <h6 class="">Writed by <a href="/authors/{{ $post->author->username }}" style="text-decoration: none">{{ $post->author->name }}</a> in <a href="">{{ $post->category->name }}</a> </h6>
-        {!! $post->body !!}
+        <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}" class="img-fluid">
+
+        <article class="my-3 fs-5">
+          {!! $post->body !!}
+        </article>
+       
       </div>
     </div>
     

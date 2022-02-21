@@ -7,7 +7,7 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
             <div class="port-preview">
                 <h2 class="port-title" >{{ $service->name }}</h2>
-                <img class="card-img-top rounded" src="/img/{{ $service->image }}" alt="Card image cap">
+                <img class="card-img-top rounded" src="https://source.unsplash.com/1200x400?developments" alt="Card image cap">
                 <p class="port-body">{!! $service->body !!}</p>
             </div>
         </div>
