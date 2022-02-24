@@ -28,8 +28,14 @@
             <a class="nav-link {{ ($title === "Contact Us") ? 'active' : '' }}" href="/contact"><b>Contact Us</b></a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form action="/posts" class="d-flex">
+          @if(request('category'))
+              <input type="hidden" name="category" value="{{ request('category') }}">
+          @endif
+          @if(request('author'))
+              <input type="hidden" name="author" value="{{ request('author') }}">
+          @endif
+          <input class="form-control me-2" type="text" placeholder="Search" name="search" value="{{ request('search') }}">
           <button class="btn btn-secondary" type="submit">Search</button>
         </form>
       </div>

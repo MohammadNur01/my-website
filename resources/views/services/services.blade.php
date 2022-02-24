@@ -17,7 +17,7 @@
             <div class="col-sm-4 p-2">
                 <div class="card">
                     <h4 class="text-dark p-2">{{ $service->name }}</h4>
-                    <img class="card-img-top rounded" src="https://source.unsplash.com/1200x400?developments" alt="Card image cap">
+                    <img class="card-img-top rounded" src="https://source.unsplash.com/500x300?developments" alt="Card image cap">
                     <div class="card-body">
                     <p class="card-text">{{ $service->excerpt }}</p>
                     </div>
