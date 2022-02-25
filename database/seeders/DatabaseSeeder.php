@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Portfolio::factory(8)->create();
         User::factory(5)->create();
-        Category::factory(5)->create();
+        Category::factory(14)->create();
         Post::factory(20)->create();
         Service::factory(5)->create();
 

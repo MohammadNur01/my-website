@@ -19,7 +19,7 @@
 
         <div class="form-floating">
           <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="User Name" required value="{{old('username')}}">
-          <label for="username">User Name</label>
+          <label for="username">Username</label>
           @error('username')
           <div class="invalid-feedback">
             {{ $message }}
