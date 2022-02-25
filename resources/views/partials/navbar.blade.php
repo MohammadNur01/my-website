@@ -38,11 +38,30 @@
           <input class="form-control me-2" type="text" placeholder="Search" name="search" value="{{ request('search') }}">
           <button class="btn btn-secondary" type="submit">Search</button>
         </form>
+        
         <ul class="navbar-nav">
+          @auth
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li> 
+              <form action="/logout" method="post">
+                @csrf
+                <button class="dropdown-item" type="submit"><i class="bi bi-box-arrow-right"></i> Logout</button>
+            </form></li>
+          </ul>
+        </li>
+        @else 
           <li class="nav-link">
             <a class="nav-link btn btn-secondary" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
           </li>
-        </ul>
+        
+        @endauth
+      </ul>
       </div>
     </div>
   </div>
