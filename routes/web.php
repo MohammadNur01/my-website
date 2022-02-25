@@ -1,18 +1,13 @@
 <?php
 
-
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\HomeController;
-use App\Models\Category;
-use App\Models\User;
-use App\Models\Post;
-use App\Models\Portfolio;
-use App\Models\PostCategory;
-use App\Models\Service;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,10 +38,12 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 
-
 Route::get('/contact', function () {
     return view('contact', [
         "title" => "Contact Us",
         "image" => "bg-contact.jpg"
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);

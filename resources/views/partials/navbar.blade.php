@@ -38,6 +38,11 @@
           <input class="form-control me-2" type="text" placeholder="Search" name="search" value="{{ request('search') }}">
           <button class="btn btn-secondary" type="submit">Search</button>
         </form>
+        <ul class="navbar-nav">
+          <li class="nav-link">
+            <a class="nav-link btn btn-secondary" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
