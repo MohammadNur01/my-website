@@ -9,7 +9,7 @@
     <meta name="keyword" content="Building Website and Web-App">
     <title>MCNWeb | {{ $title }}</title>
     {{-- my style --}}
-    {{-- <link rel="stylesheet" href="./css/style.css"> --}}
+    <link rel="stylesheet" href="/css/style.css">
 
     {{-- favicon --}}
     <link rel="icon" href="my_favicon.ico" type="image/x-icon">
@@ -24,102 +24,94 @@
     {{-- fontawesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<style>
+  @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-    <style>
-      @import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before{
+  font-family: "entypo", sans-serif;
+}
+a {
+  text-decoration: none;
+}
 
-      /* entypo */
-      [class*="entypo-"]:before{
-        font-family: "entypo", sans-serif;
-      }
-      a {
-        text-decoration: none;
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 
-      .form-signin .form-floating:focus-within {
-        z-index: 2;
-      }
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
 
-      .form-signin input[type="email"] {
-        margin-bottom: -1px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-      }
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
-      .form-signin input[type="password"] {
-        margin-bottom: 10px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
-      /* .container {
-        margin: 0 auto;
-        padding: 20px 50px;
-        background: white;
-      } */
+#sticky-social {
+  left: 0;
+  position: fixed;
+  top: 150px;
+}
 
-      #sticky-social {
-        left: 0;
-        position: fixed;
-        top: 150px;
-      }
-      
-      #sticky-social a {
-        background: #333;
-        color: #fff;
-        display: block;
-        height: 35px;
-        font: 16px "Open Sans", sans-serif;
-        line-height: 35px;
-        position: relative;
-        text-align: center;
-        width:35px;
-      }
+#sticky-social a {
+  background: #333;
+  color: #fff;
+  display: block;
+  height: 35px;
+  font: 16px "Open Sans", sans-serif;
+  line-height: 35px;
+  position: relative;
+  text-align: center;
+  width:35px;
+}
 
-      #sticky-social a:hover span {
-        left: 100%;
-      }
+#sticky-social a:hover span {
+  left: 100%;
+}
 
-      #sticky-social a span {
-        line-height: 35px;
-        left: -120px;
-        position: absolute;
-        text-align: center;
-        width: 120px;
-      }
+#sticky-social a span {
+  line-height: 35px;
+  left: -120px;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+}
 
-      #sticky-social a[class*="facebook"],
-      #sticky-social a[class*="facebook"]:hover,
-      #sticky-social a[class*="facebook"] span { background: #3b5998;}
+#sticky-social a[class*="facebook"],
+#sticky-social a[class*="facebook"]:hover,
+#sticky-social a[class*="facebook"] span { background: #3b5998;}
 
-      #sticky-social a[class*="twitter"]
-      #sticky-social a[class*="twitter"]:hover,
-      #sticky-social a[class*="twitter"] span { background: #00aced;}
+#sticky-social a[class*="twitter"]
+#sticky-social a[class*="twitter"]:hover,
+#sticky-social a[class*="twitter"] span { background: #00aced;}
 
-      
-      #sticky-social a[class*="gplus"]
-      #sticky-social a[class*="gplus"]:hover,
-      #sticky-social a[class*="gplus"] span { background: #b3021a;}
 
-      
-      #sticky-social a[class*="instagrem"]
-      #sticky-social a[class*="instagrem"]:hover,
-      #sticky-social a[class*="instagrem"] span { background:rgb(255, 0, 21);}
+#sticky-social a[class*="gplus"]
+#sticky-social a[class*="gplus"]:hover,
+#sticky-social a[class*="gplus"] span { background: #b3021a;}
 
-      
-      #sticky-social a[class*="github"]
-      #sticky-social a[class*="github"]:hover,
-      #sticky-social a[class*="github"] span { background: #6b04af;}
-    </style>
-    
-    
+
+#sticky-social a[class*="instagrem"]
+#sticky-social a[class*="instagrem"]:hover,
+#sticky-social a[class*="instagrem"] span { background:rgb(255, 0, 21);}
+
+
+#sticky-social a[class*="github"]
+#sticky-social a[class*="github"]:hover,
+#sticky-social a[class*="github"] span { background: #6b04af;}
+
+</style>
   </head>
   <body style="background-color: rgb(236, 236, 236)">
       @include('partials.navbar')

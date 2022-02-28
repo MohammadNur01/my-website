@@ -29,7 +29,7 @@
       </p>
       <p class="card-text">{{ $posts[0]->excerpt }}</p>
 
-      <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
+      <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-dark">Read more</a>
     </div>
   </div>
 
@@ -49,7 +49,7 @@
             <a style="text-decoration: none" href="/posts?authors={{ $post->author->username }}">{{ $post->author->name }}</a> in {{ $post->created_at->diffForHumans() }}
           </small>
           <p class="card-text fs-5">{{ $post->excerpt }}.</p>
-          <a href="/posts/{{ $post->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
+          <a href="/posts/{{ $post->slug }}" class="text-decoration-none btn btn-dark">Read more</a>
         </div>
       </div>
     </div>
