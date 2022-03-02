@@ -5,13 +5,13 @@
     <div class="row my-3">
       <div class="col-lg-8">
         <h2 class="post-title fw-bold mb-3">{{ $post->title }}</h2>
-        <a href="" class="btn btn-success">Back to all my Post <span data-feather="arrow-left"></span>
+        <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to all my Post
         </a>
-        <a href="" class="btn btn-warning">Edit <span data-feather="edit"></span>
+        <a href="" class="btn btn-warning"><span data-feather="edit"></span> Edit 
         </a>
-        <a href="" class="btn btn-danger">Delete <span data-feather="x-circle"></span>
+        <a href="" class="btn btn-danger"><span data-feather="x-circle"></span> Delete
         </a>
-        <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}" class="img-fluid">
+        <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top mt-3" alt="{{ $post->category->name }}" class="img-fluid">
 
         <article class="my-3 fs-5">
           {!! $post->body !!}
