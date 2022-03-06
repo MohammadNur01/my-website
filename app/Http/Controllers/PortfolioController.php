@@ -19,7 +19,6 @@ class PortfolioController extends Controller
     {
         return view('portfolios/portfolio', [
             "title" => "Portfolio",
-            // "categories" => Post::allCat(),
             "portfolio" => $port
         ]);
     }

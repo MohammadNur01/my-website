@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardPortfolioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\RegisterController;
@@ -53,11 +54,12 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+
+// Dashboard
 Route::get('dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
-
-// Dashboard
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/portfolios', DashboardPortfolioController::class)->middleware('auth');

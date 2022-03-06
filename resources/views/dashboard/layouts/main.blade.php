@@ -18,7 +18,7 @@
     
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
-
+ 
     <style>
       trix-toolbar [data-trix-button-group="file-tools"]{
         display: none;
