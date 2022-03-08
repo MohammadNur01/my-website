@@ -6,19 +6,18 @@
 </div>
 
 @if(session()->has('success'))
-  <div class="alert alert-success col-lg-9" role="alert">
+  <div class="alert alert-success col-lg-8" role="alert">
     {{ session('success') }}
   </div>
 @endif
 
-<div class="table-responsive col-lg-10">
+<div class="table-responsive col-lg-8">
     <a href="/dashboard/services/create" class="btn btn-dark m-3 mt-1 ml-1">Create New Service</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Title</th>
-          <th scope="col">Excerpt</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -27,14 +26,16 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $service->name }}</td>
-            <td>{{ $service->excerpt }}</td>
             <td>
-                <a href="/dashboard/services/{{ $service->slug }}"><span data-feather="eye" class="badge bg-info"></span>
+                <a href="/dashboard/services/{{ $service->slug }}" class="badge bg-info"><span data-feather="eye" ></span>
                 </a>
-                <a href=""><span data-feather="edit" class="badge bg-warning"></span>
+                <a href="" class="badge bg-warning"><span data-feather="edit" ></span>
                 </a>
-                <a href=""><span data-feather="x-circle" class="badge bg-danger"></span>
-                </a>
+                <form action="/dashboard/services/{{ $service->slug }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button  class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle" ></span></button>
+                </form>
             </td>
           </tr>
           @endforeach

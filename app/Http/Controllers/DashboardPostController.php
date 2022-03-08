@@ -66,7 +66,6 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
         return view('dashboard.posts.show', [
             'post' => $post
         ]);
@@ -103,7 +102,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');
     }
 
     public function checkSlug(Request $request)

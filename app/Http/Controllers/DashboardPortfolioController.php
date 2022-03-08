@@ -50,7 +50,7 @@ class DashboardPortfolioController extends Controller
 
         Portfolio::create($validatedData);
 
-        return redirect('/dashboard/portfolios')->with('susccess', 'New portfolio has been added!');
+        return redirect('/dashboard/portfolios')->with('success', 'New portfolio has been added!');
     }
 
     /**
@@ -97,7 +97,9 @@ class DashboardPortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        Portfolio::destroy($portfolio->id);
+
+        return redirect('/dashboard/portfolios')->with('success', 'Portfolio has been deleted!');
     }
 
     public function checkSlug(Request $request)

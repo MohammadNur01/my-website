@@ -6,7 +6,7 @@
 </div>
 
 @if(session()->has('success'))
-  <div class="alert alert-success col-lg-9" role="alert">
+  <div class="alert alert-success col-lg-8" role="alert">
     {{ session('success') }}
   </div>
 @endif
@@ -27,12 +27,15 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $portfolio->title }}</td>
             <td>
-                <a href="/dashboard/portfolios/{{ $portfolio->slug }}"><span data-feather="eye" class="badge bg-info"></span>
+                <a href="/dashboard/portfolios/{{ $portfolio->slug }}" class="badge bg-info"><span data-feather="eye" ></span>
                 </a>
-                <a href=""><span data-feather="edit" class="badge bg-warning"></span>
+                <a href="" class="badge bg-warning"><span data-feather="edit" ></span>
                 </a>
-                <a href=""><span data-feather="x-circle" class="badge bg-danger"></span>
-                </a>
+                <form action="/dashboard/portfolios/{{ $portfolio->slug }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
+                </form> 
             </td>
           </tr>
           @endforeach
