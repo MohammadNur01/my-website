@@ -29,7 +29,7 @@
             <td>
                 <a href="/dashboard/portfolios/{{ $portfolio->slug }}" class="badge bg-info"><span data-feather="eye" ></span>
                 </a>
-                <a href="" class="badge bg-warning"><span data-feather="edit" ></span>
+                <a href="/dashboard/portfolios/{{ $portfolio->slug }}/edit" class="badge bg-warning"><span data-feather="edit" ></span>
                 </a>
                 <form action="/dashboard/portfolios/{{ $portfolio->slug }}" method="post" class="d-inline">
                   @method('delete')

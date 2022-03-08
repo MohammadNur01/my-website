@@ -29,7 +29,7 @@
             <td>
                 <a href="/dashboard/services/{{ $service->slug }}" class="badge bg-info"><span data-feather="eye" ></span>
                 </a>
-                <a href="" class="badge bg-warning"><span data-feather="edit" ></span>
+                <a href="/dashboard/services/{{ $service->slug }}/edit" class="badge bg-warning"><span data-feather="edit" ></span>
                 </a>
                 <form action="/dashboard/services/{{ $service->slug }}" method="post" class="d-inline">
                   @method('delete')

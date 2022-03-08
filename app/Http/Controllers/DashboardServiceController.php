@@ -72,7 +72,9 @@ class DashboardServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('dashboard.services.edit', [
+            'service' => $service
+        ]);
     }
 
     /**
@@ -84,7 +86,22 @@ class DashboardServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'body' => 'required'
+        ];
+
+        if ($request->slug != $service->slug) {
+            $rules['slug'] = 'required|unique:services';
+        }
+
+        $validatedData = $request->validate($rules);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        Service::where('id', $service->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/services')->with('success', 'Service has been updated!');
     }
 
     /**

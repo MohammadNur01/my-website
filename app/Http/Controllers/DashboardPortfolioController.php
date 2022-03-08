@@ -74,7 +74,9 @@ class DashboardPortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return view('dashboard.portfolios.edit', [
+            'portfolio' => $portfolio
+        ]);
     }
 
     /**
@@ -86,8 +88,25 @@ class DashboardPortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'body' => 'required'
+        ];
+
+        if ($request->slug != $portfolio->id) {
+            $rules['slug'] =  'required|unique:portfolios';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        Portfolio::where('id', $portfolio->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/portfolios')->with('success', 'Portfolio has been updated!');
     }
+
 
     /**
      * Remove the specified resource from storage.
