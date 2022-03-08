@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\DashboardAboutController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardServiceController;
 use App\Http\Controllers\DashboardPortfolioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiceController;
@@ -62,4 +64,11 @@ Route::get('dashboard', function () {
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::get('/dashboard/portfolios/checkSlug', [DashboardPortfolioController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/portfolios', DashboardPortfolioController::class)->middleware('auth');
+
+Route::get('/dashboard/services/checkSlug', [DashboardServiceController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/services', DashboardServiceController::class)->middleware('auth');
+
+Route::resource('/dashboard/abouts', DashboardAboutController::class)->middleware('auth');

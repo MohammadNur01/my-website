@@ -31,6 +31,7 @@
 [class*="entypo-"]:before{
   font-family: "entypo", sans-serif;
 }
+
 a {
   text-decoration: none;
 }
@@ -113,7 +114,7 @@ ul {
 
 </style>
   </head>
-  <body style="background-color: rgb(236, 236, 236)">
+  <body style="background-color: rgb(236, 236, 236); min-height: 100%; ">
       @include('partials.navbar')
 
       <aside id="sticky-social">
@@ -130,7 +131,16 @@ ul {
           @yield('container')
       </div>
 
-      @include('partials.footer')
+     
+      <div class="footer bg-dark" style="bottom: 0px;">
+        <footer class="d-flex justify-content-between align-items-center p-3 m-0">
+          <div class="col-md d-flex align-items-center justify-content-between">
+              <a href="/"><img src="/img/logo.png" width="60" alt=""></a>
+              <span class="text-muted">Copyright &copy; <?= date('Y') ?> MCNWeb built by. <a style="text-decoration: none" href="/about">Mohammad Nuraini</a> </span>
+              <span class="text-muted">Powerred by customize of <a style="text-decoration: none" href="https://getbootstrap.com/">Bootstrap</a></span>
+          </div>
+        </footer>
+      </div>
    
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

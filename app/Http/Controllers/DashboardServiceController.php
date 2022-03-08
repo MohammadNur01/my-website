@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portfolio;
+use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
-
-class DashboardPortfolioController extends Controller
+class DashboardServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class DashboardPortfolioController extends Controller
      */
     public function index()
     {
-        return view('dashboard.portfolios.index', [
-            'portfolios' => Portfolio::all()
+        return view('dashboard.services.index', [
+            'services' => Service::all()
         ]);
     }
 
@@ -29,7 +28,7 @@ class DashboardPortfolioController extends Controller
      */
     public function create()
     {
-        return view('dashboard.portfolios.create');
+        return view('dashboard.services.create');
     }
 
     /**
@@ -41,38 +40,37 @@ class DashboardPortfolioController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'slug' => 'required|unique:portfolios',
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:services',
             'body' => 'required'
         ]);
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        Portfolio::create($validatedData);
+        Service::create($validatedData);
 
-        return redirect('/dashboard/portfolios')->with('susccess', 'New portfolio has been added!');
+        return redirect('/dashboard/services')->with('success', 'New service has been added!');
     }
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Portfolio  $portfolio
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Portfolio $portfolio)
+    public function show(Service $service)
     {
-        return view('dashboard.portfolios.show', [
-            'portfolio' => $portfolio
+        return view('dashboard.services.show', [
+            'service' => $service
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Portfolio  $portfolio
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit(Service $service)
     {
         //
     }
@@ -81,10 +79,10 @@ class DashboardPortfolioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Portfolio  $portfolio
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -92,17 +90,17 @@ class DashboardPortfolioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Portfolio  $portfolio
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy(Service $service)
     {
         //
     }
 
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Portfolio::class, 'slug', $request->title);
+        $slug = SlugService::createSlug(Service::class, 'slug', $request->name);
 
         return response()->json(['slug' => $slug]);
     }

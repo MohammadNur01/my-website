@@ -15,19 +15,19 @@
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/portfolios*') ? 'active' : '' }}" href="/dashboard/portfolios">
-            <span data-feather="file-text"></span>
+            <span data-feather="layers"></span>
             My Portfolio
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/services*') ? 'active' : '' }}" href="/dashboard/services">
-            <span data-feather="file-text"></span>
+            <span data-feather="settings"></span>
             My Service
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/abouts*') ? 'active' : '' }}" href="/dashboard/abouts">
-            <span data-feather="file-text"></span>
+            <span data-feather="alert-circle"></span>
             About
           </a>
         </li>
