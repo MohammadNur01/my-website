@@ -94,7 +94,7 @@ class DashboardPortfolioController extends Controller
         ];
 
         if ($request->slug != $portfolio->id) {
-            $rules['slug'] =  'required|unique:portfolios';
+            $rules['slug'] = 'required|unique:portfolios';
         }
 
         $validatedData = $request->validate($rules);

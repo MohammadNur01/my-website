@@ -11,9 +11,9 @@
       <div class="row mb-4">
         @foreach ($portfolios as $port)
           <div class="col-sm-4 p-2">
-              <div class="card">
+              <div class="card border-0">
                   <h4 class="text-dark p-2">{{ $port->title }}</h4>
-                  <img class="card-img-top rounded" src="https://source.unsplash.com/500x300?computers" alt="Card image cap">
+                  <img class="card-img-top rounded-bottom " src="https://source.unsplash.com/500x300?computers" alt="Card image cap">
                   <div class="card-body">
                   <p class="card-text fs-5">{{ $port->excerpt }}</p>
                   </div>

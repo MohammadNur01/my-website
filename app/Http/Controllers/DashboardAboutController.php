@@ -26,7 +26,7 @@ class DashboardAboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.abouts.create');
     }
 
     /**
@@ -57,9 +57,9 @@ class DashboardAboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit()
     {
-        //
+        return view('dashboard.abouts.edit');
     }
 
     /**
@@ -71,7 +71,19 @@ class DashboardAboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns',
+            'image' => 'required|max:2000',
+            'body' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        About::where('id', $about->id)
+            ->update($validatedData);
+
+        return redirect('dashboard/abouts')->with('success', 'About Us has been updated!');
     }
 
     /**

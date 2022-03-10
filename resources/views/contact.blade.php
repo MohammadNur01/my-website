@@ -4,7 +4,7 @@
     <section id="contact" class="contact bg-secondary rounded mb-5" >
             <div class="row mb-4 pt-4 text-center">
                 <h2 class="fw-bolder text-white">Contact Us</h2>
-                    <hr style="color: silver">
+                    <hr style="color: rgb(117, 114, 114)">
                     <h4 class="text-white">We'd love to hear all from you</h4>
                 <div class="col-md-8 mt-3">
                         <div class="row gx-5 justify-content-center">
@@ -42,8 +42,8 @@
                             </div>
                 </div>
                 <div class="col-md-4 mt-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://source.unsplash.com/500x300?office" class="card-img-top" alt="...">
+                    <div class="card border-0" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/500x300?office" class="card-img-top border-0" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">MCNWeb Office</h5>
                        </div>
