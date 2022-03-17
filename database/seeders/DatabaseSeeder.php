@@ -23,11 +23,12 @@ class DatabaseSeeder extends Seeder
 
 
 
-        // User::create([
-        //     'name' => 'Mohammad Nuraini',
-        //     'email' => 'mohammadnur@gmail.com',
-        //     'password' => bcrypt('12345')
-        // ]);
+        User::create([
+            'name' => 'Mohammad Nuraini',
+            'username' => 'mohammadnur',
+            'email' => 'mohammadnur@gmail.com',
+            'password' => bcrypt('12345')
+        ]);
 
         // Category::create([
         //     'name' => 'Web Programming',
@@ -56,7 +57,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Portfolio::factory(8)->create();
         User::factory(5)->create();
-        Category::factory(14)->create();
+        Category::factory(10)->create();
         Post::factory(20)->create();
         Service::factory(5)->create();
 

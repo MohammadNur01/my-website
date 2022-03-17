@@ -57,9 +57,11 @@ class DashboardAboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit(About $about)
     {
-        return view('dashboard.abouts.edit');
+        return view('dashboard.abouts.edit', [
+            'about' => $about
+        ]);
     }
 
     /**

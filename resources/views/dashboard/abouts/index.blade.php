@@ -12,7 +12,6 @@
 @endif
 
 <div class="table-responsive col-lg-10 mb-5">
-  <a href="/dashboard/abouts/create" class="btn btn-dark m-3 mt-1 ml-1">Create About Us</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -31,7 +30,7 @@
             <td>{{ $about->image }}</td>
             <td>{!! $about->body !!}</td>
             <td>
-              <a href="/dashboard/abouts/{{ $about->name }}/edit" class="badge bg-warning"><span data-feather="edit" ></span>
+              <a href="/dashboard/abouts/edit" class="badge bg-warning"><span data-feather="edit" ></span>
               </a>
             </td>
           </tr>
