@@ -33,7 +33,7 @@
           @else
           <img class="img-preview img-fluid mb-3 col-sm-5">
           @endif
-          <input class="form-control  @error('image') is_invalid @enderror" id="image" name="image" required  value="{{ old('image') }}" type="file" id="image" name="image" onchange="previewImage()">
+          <input class="form-control  @error('image') is_invalid @enderror" id="image" name="image"  value="{{ old('image') }}" type="file" id="image" name="image" onchange="previewImage()">
           @error('image')
           <div class="invalid-feedback">
             {{ $message }}  

@@ -23,12 +23,6 @@ class DatabaseSeeder extends Seeder
 
 
 
-        User::create([
-            'name' => 'Mohammad Nuraini',
-            'username' => 'mohammadnur',
-            'email' => 'mohammadnur@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
 
         // Category::create([
         //     'name' => 'Web Programming',
@@ -46,7 +40,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         Home::create([
             'heading' => 'Halaman Home',
-            'sub' => 'You want to online your produc?',
+            'sub' => 'You want to online your product?',
             'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In beatae dicta atque velit eaque totam distinctio'
         ]);
         About::create([
@@ -55,11 +49,11 @@ class DatabaseSeeder extends Seeder
             'image' => 'person.jpg',
             'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. In beatae dicta atque velit eaque totam distinctio exercitationem?'
         ]);
-        Portfolio::factory(8)->create();
-        User::factory(5)->create();
-        Category::factory(10)->create();
-        Post::factory(20)->create();
-        Service::factory(5)->create();
+        // Portfolio::factory(8)->create();
+        // User::factory(5)->create();
+        // Category::factory(10)->create();
+        // Post::factory(20)->create();
+        // Service::factory(5)->create();
 
         // Post::create([
         //     'title' => 'Post 1',

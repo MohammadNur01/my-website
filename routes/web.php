@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardAboutController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardServiceController;
@@ -72,3 +73,6 @@ Route::get('/dashboard/services/checkSlug', [DashboardServiceController::class, 
 Route::resource('/dashboard/services', DashboardServiceController::class)->middleware('auth');
 
 Route::resource('/dashboard/abouts', DashboardAboutController::class)->middleware('auth');
+
+Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('admin');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
